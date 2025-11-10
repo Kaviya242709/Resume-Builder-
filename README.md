@@ -1,2 +1,4 @@
-# Resume-Builder-
-Motive of the project is to write a CV based on the roles and description anyone is applying for , full ATS check and land in dream job
+- Intelligent CV generation tailored to specific roles and job descriptions
+- Comprehensive ATS (Applicant Tracking System) compatibility checking
+- Career-focused resume optimization
+- Production-ready application deployment"

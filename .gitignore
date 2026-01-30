@@ -1,0 +1,6 @@
+master_resume.txt
+*.tex
+*.pdf
+chroma_db/
+__pycache__/
+.env

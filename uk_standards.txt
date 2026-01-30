@@ -1,0 +1,30 @@
+UK CV Standards Guide
+
+1. SUMMARY SECTION:
+- Must be exactly 3 lines
+- Line 1: Experience level + main field
+- Line 2: 2-3 key technical skills
+- Line 3: One notable achievement or career goal
+- No personal pronouns (I, my)
+- Maximum 50 words total
+- Focus on value to employer
+
+2. SKILLS SECTION:
+- Only include skills you actually have
+- Prioritize skills mentioned in job description
+- Remove skills not relevant to the role
+- Maximum 6-8 skills
+- Format: Skill1, Skill2, Skill3...
+
+3. EXPERIENCE SECTION:
+- Keep all facts exactly (no lying!)
+- Reorder bullet points by relevance
+- Highlight achievements matching job requirements
+- Maximum 5-6 bullet points per role
+- Remove less relevant points if needed
+
+4. GENERAL RULES:
+- Be truthful at all times
+- Follow UK professional tone
+- Output must remain in LaTeX format
+- No markdown backticks or explanations

@@ -1,23 +1,36 @@
-import uuid
-
 import chromadb
 
 
 class Skeleton:
-    # this creates a folder on your local machine to store embeedings safely
     def __init__(self):
         self.client = chromadb.PersistentClient(path="./chroma_db")
         self.collection = self.client.get_or_create_collection(name="user_resume")
 
-    def remember(self, resume_content):  # saves the cv into the database
-        """Adds your resume to the memory"""
-        # giving each memory a unique fingerprint so they never get lost
-        unique_id = str(uuid.uuid4())
-        self.collection.add(documents=[resume_content], ids=[unique_id])
+    def remember(self, resume_content):
+        """Saves CV into ChromaDB"""
+        self.collection.upsert(  # Changed from add to upsert
+            documents=[resume_content], ids=["my_resume"]
+        )
 
-    def recall(self):  # fetches the cv from the database
-        """Bring back the most recent version of your story"""
-        memories = self.collection.get()  # gets the most recent cv from the database
-        if memories["documents"]:  # return the first document you found
-            return memories["documents"][0]
-        return "The skeleton has no memory of your resume. Sorry!"
+    def recall(self):
+        """here it fetches full CV data from ChromaDB as a single string"""
+        result = self.collection.get(ids=["my_resume"])
+
+        if not result or not result["documents"]:
+            print("Hey sorry to tell, there is no resume data found in brain(memory)!")
+            return ""
+
+        # Return the FULL content as a single string
+        # The AI will parse [SUMMARY], [SKILLS], [EXPERIENCE] sections itself
+        full_data = result["documents"][0]
+        return full_data
+
+    def stitch(self, template, summary, skills, experience):
+        """Final assembly of LaTeX strings"""
+        final_cv = template.replace("[SUMMARY]", summary)
+        final_cv = final_cv.replace("[SKILLS]", skills)
+        final_cv = final_cv.replace("[EXPERIENCE]", experience)
+
+        # Emergency backup fix for common LaTeX breakers - as this happens when ai generates content
+        final_cv = final_cv.replace("C#", "C\\#").replace(" %", " \\%")
+        return final_cv

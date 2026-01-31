@@ -1,11 +1,15 @@
+import os
 import time
 
+from dotenv import load_dotenv
 from google import genai
+
+load_dotenv()
 
 
 class nerves:
     def __init__(self, model_name="models/gemma-3-4b-it"):
-        self.api_key = "AIzaSyDGozwcOMI0b-muREZpMC08WbE11sbL5BA"
+        self.api_key = os.getenv("AI_API_KEY")
         self.client = genai.Client(api_key=self.api_key)
         self.model = model_name
 

@@ -33,7 +33,7 @@ class nerves:
                         break
                 return text
 
-            except Exception as e:  # since i reach a rate-limit wait or retry
+            except Exception as e:  # since i reached a rate-limit wait or retry
                 if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
                     nap_time = 20 + (attempt * 10)
                     time.sleep(nap_time)

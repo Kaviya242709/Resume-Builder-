@@ -70,7 +70,7 @@ class Workflow:
         """Step 2: Generate optimized CV fragments"""
         rules_path = "uk_standards.txt"
         if not state["original_CV"]:
-            print("⚠️ ALERT: The Brain has no memories (original_CV is empty)!")
+            print("OMG! The Brain has no memories (original_CV is empty)!")
         print("Generating identity, Please wait")
         summary_piece = self.brain.identity(
             state["job_description"], state["original_CV"], rules_path
@@ -90,19 +90,19 @@ class Workflow:
         )
         print(f"Journey generated: {len(exp_piece)} chars")
 
-        # Assemble final CV
+        # assemble final CV
         template = state["laTex_CV_template"]
 
-        #  Does the template have the tags? ---
+        #  do the template have the tags?
         if "[SUMMARY]" not in template:
-            print("❌ ERROR: [SUMMARY] tag not found in the template!")
+            print("Tag nammed [SUMMARY] not found in the template!")
         # Assemble final CV
         template = state["laTex_CV_template"]
         final_latex = template.replace("[SUMMARY]", summary_piece)
         final_latex = final_latex.replace("[SKILLS]", skills_piece)
         final_latex = final_latex.replace("[EXPERIENCE]", exp_piece)
 
-        # MUST merge with existing state
+        # Must merge with existing state
         return {
             **state,
             "final_CV": final_latex,

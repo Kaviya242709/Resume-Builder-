@@ -48,7 +48,7 @@
 |skeleton.py          |      Joints         |           Vector storage handling semantic search.                  |
 |workflow.py          |      Blood          |           Circulates state through the nodes                        |
 |main.py              |      Skin           |           The healing logic that cleans LaTex syntax.               |
-|---------------------|---------------------|---------------------------------------------------------------------|
+
 
 
 ##Contributors Expectations:~

@@ -1,4 +1,4 @@
-#AI RESUME BUILDER: RAG driven career evolution
+# AI RESUME BUILDER: RAG driven career evolution
 - An automated RAG based pipeline that evolves your career "Skeleton" into a polished LaTex "Skin".
 
 ##Introduction:-
@@ -6,7 +6,7 @@
 
 - By focusing on ATS and LaTex percision, this ensures your proffesional identity is always presented at its biological test.
 
-##System Anatomy:(Architechtural diagram)
+## System Anatomy:(Architechtural diagram)
 - Here the system is built as a Directed Acyclic Graph(DAG). As workflow is more essential for understanding how the "Nerves" interact with "Memory":
 
 - Graph TD
@@ -15,11 +15,11 @@
     |----------------------------------------|---------------------------------|
     | A[main.py: Input JD]                   | B[graph.py: Workflow Logic]     |
     | C[nodes.py: RAG Retrieval & Tailoring] | D[state.py: Memory Persistence] |
-    | E[edges.py: Conditional Routing]       | F[main.py: Final LaTeX Output] |
+    | E[edges.py: Conditional Routing]       | F[main.py: Final LaTeX Output]  |
     
 
 
-##Setup & Installation
+## Setup & Installation
 - For end users(Quick Start)
 - If you just want to generate a resume, follow these steps:
 1) Clone : git clone https://github.com/yourusername/Resume-Builder.git
@@ -38,7 +38,7 @@
 3) Dependencies: pip install -r requirements.txt
 4) Docs: Refer to https://docs.langchain.com/oss/python/langgraph/install | https://docs.trychroma.com/docs/overview/getting-started
 
-##The Biological Components:
+## The Biological Components:
 - Ecosystem of my project are follows:-
  
 |File                 |      Role           |           Description                                               |
@@ -51,7 +51,7 @@
 
 
 
-##Contributors Expectations:~
+## Contributors Expectations:~
 - I welcome contributors! To keep the organism healthy
 1) Issues first: Please open an issue before submitting a pull request.
 2) Pull requests: Ensure your PR includes updated documentations if you modify the state.py or nodes.py

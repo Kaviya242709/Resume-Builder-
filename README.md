@@ -42,9 +42,10 @@
 
 # Research DNA: Credits
 - To give credit to the vedios and documents that helped me build each functions are as follows:
-  * Vector Search : Inspired by https://docs.trychroma.com/docs/overview/getting-started. Used for high precision expereince retrieval.
+  * Vector Search : Inspired by https://docs.trychroma.com/docs/overview/getting-started. Used for high precision expereince retrieval | https://docs.trychroma.com/guides/deploy/gcp.
   * Workflow orchestration: Built using patterns from https://docs.langchain.com/oss/python/langgraph/overview.
-  * Documentation: Structured based on https://www.youtube.com/watch?v=E6NO0rgFub4.
+  * Documentation: Structured based on https://www.youtube.com/watch?v=E6NO0rgFub4 | https://www.youtube.com/watch?v=T-D1OfcDW1M
+  * Errors handling: https://stackoverflow.com/questions/2541616/how-to-escape-strip-special-characters-in-the-latex-document,
 
 
 

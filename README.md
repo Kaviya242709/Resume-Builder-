@@ -10,15 +10,19 @@
 ## System Anatomy:(Architechtural diagram)
 - Here the system is built as a Directed Acyclic Graph(DAG). As workflow is more essential for understanding how the "Nerves" interact with "Memory":
 
-- Graph TD
-
-    | Graph                                  |  TD                             |
-    |----------------------------------------|---------------------------------|
-    | A[main.py: Input JD]                   | B[graph.py: Workflow Logic]     |
-    | B[graph.py: Workflow Logic]            | C[nodes.py: RAG Retrieval & Tailoring] |
-    | C[nodes.py: RAG Retrieval & Tailoring] | D[state.py: Memory Persistence] |
-    | E[edges.py: Conditional Routing]       | F[main.py: Final LaTeX Output]  |
+graph TD
+    A["🚀 main.py<br/>Input JD"] --> B["📊 graph.py<br/>Workflow Logic"]
+    B --> C["🧠 nodes.py<br/>RAG Retrieval<br/>& Tailoring"]
+    C --> D["💾 state.py<br/>Memory Persistence"]
+    D --> E["🔀 edges.py<br/>Conditional Routing"]
+    E --> F["📄 main.py<br/>Final LaTeX Output"]
     
+    style A fill:#e1f5ff,stroke:#01579b,stroke-width:2px
+    style B fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    style C fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    style D fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    style E fill:#ede7f6,stroke:#311b92,stroke-width:2px
+    style F fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
 
 
 ## Setup & Installation
@@ -48,6 +52,37 @@
   * Errors handling: https://stackoverflow.com/questions/2541616/how-to-escape-strip-special-characters-in-the-latex-document,
 
 
+## Future Enhancement:
+## System Architecture
+```mermaid
+graph TD
+    subgraph Input_Layer [Environment & DNA]
+        A[Job Description] --> B{The Engine}
+        C[Master Career Skeleton] --> B
+    end
+    subgraph Processing_Layer [Nervous System]
+        B --> D[RAG Retrieval Node]
+        D --> E[Semantic Alignment]
+        E --> F[Single LaTeX Template Engine]
+    end
+    subgraph Validation_Layer [The Immune System]
+        F --> G{ATS Match Scorer}
+        G -- Match > 85% --> H[Final Production PDF]
+        
+        G -- Match < 85% --> I[Gap Analysis Report]
+        
+        I --> J{Diagnosis}
+        J -- "Wrong Domain (e.g. AI vs Security)" --> L[Hard Reject + Reason]
+        J -- "Skill Gap" --> K[Learning Hub]
+        
+        K --> M[YouTube Playlists]
+        K --> N[Technical Documentation]
+    end
+    style F fill:#d1e7ff,stroke:#004085
+    style G fill:#fff3cd,stroke:#856404
+    style K fill:#d4edda,stroke:#155724
+    style L fill:#f8d7da,stroke:#721c24
+```
 
 ## For contributors:(Developer setup)
 - If you want to help evolve the organism:

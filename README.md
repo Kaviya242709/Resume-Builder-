@@ -11,19 +11,12 @@
 - Here the system is built as a Directed Acyclic Graph(DAG). As workflow is more essential for understanding how the "Nerves" interact with "Memory":
 
 ```mermaid
-graph LR
+graph TD
     A["main.py<br/>Input JD"] --> B["graph.py<br/>Workflow Logic"]
-    B --> C["nodes.py<br/>RAG & Tailoring"]
-    C --> D["state.py<br/>Memory"]
-    D --> E["edges.py<br/>Routing"]
-    E --> F["main.py<br/>LaTeX Output"]
-    
-    style A stroke:#1976d2,stroke-width:2px
-    style B stroke:#7b1fa2,stroke-width:2px
-    style C stroke:#388e3c,stroke-width:2px
-    style D stroke:#c2185b,stroke-width:2px
-    style E stroke:#f57c00,stroke-width:2px
-    style F stroke:#00796b,stroke-width:3px
+    B --> C["nodes.py<br/>RAG Retrieval<br/>& Tailoring"]
+    C --> D["state.py<br/>Memory Persistence"]
+    D --> E["edges.py<br/>Conditional Routing"]
+    E --> F["main.py<br/>Final LaTeX Output"]
 ```    
 
 
@@ -57,28 +50,28 @@ graph LR
 ## Future Enhancement
 ```mermaid
 graph LR
-    A["API Input<br/>Job URL"] --> B["Auto Extract<br/>JD"]
-    B --> C["Store in<br/>Database"]
-    C --> D["Load User<br/>CV"]
-    D --> E["Semantic<br/>Match"]
-    E --> F["Calculate<br/>ATS Score"]
+    A["Job Description"] --> B["Parse Keywords"]
+    B --> C["Store DB"]
+    C --> D["Load CV"]
+    D --> E["Semantic Match"]
+    E --> F["ATS Score"]
     
     F --> G{Score ≥ 85%?}
     
-    G -->|YES| H["Optimize<br/>Content"]
-    H --> I["Align with<br/>JD"]
-    I --> J["Apply Fixed<br/>Template"]
-    J --> K["Auto Generate<br/>PDF"]
+    G -->|YES| H["Optimize"]
+    H --> I["Align JD"]
+    I --> J["LaTeX Gen"]
+    J --> K["PDF Output"]
     
-    G -->|❌ NO| L["Gap Analysis<br/>Report"]
-    L --> M["Missing<br/>Skills"]
-    M --> N["Learning<br/>Resources"]
+    G -->|❌ NO| L["Gap Analysis"]
+    L --> M["Skills Missing"]
+    M --> N[" Suggestions"]
     
-    N --> O["YouTube<br/>Playlists"]
-    N --> P["Technical<br/>Docs"]
-    N --> Q["LinkedIn<br/>Profiles"]
+    N --> O["YouTube"]
+    N --> P["Docs"]
     
-    style A stroke:#1976d2,stroke-width:3px
+    
+    style A stroke:#1976d2,stroke-width:2px
     style B stroke:#1976d2,stroke-width:2px
     style C stroke:#1976d2,stroke-width:2px
     
@@ -90,7 +83,7 @@ graph LR
     
     style H stroke:#388e3c,stroke-width:2px
     style I stroke:#388e3c,stroke-width:2px
-    style J stroke:#2e7d32,stroke-width:3px
+    style J stroke:#388e3c,stroke-width:2px
     style K stroke:#2e7d32,stroke-width:3px
     
     style L stroke:#c2185b,stroke-width:2px
@@ -100,6 +93,9 @@ graph LR
     style O stroke:#00796b,stroke-width:2px
     style P stroke:#00796b,stroke-width:2px
     style Q stroke:#00796b,stroke-width:2px
+    
+    style R stroke:#e65100,stroke-width:2px
+    style S stroke:#d84315,stroke-width:3px
 ```
 
 ## For contributors:(Developer setup)

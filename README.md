@@ -11,13 +11,12 @@
 - Here the system is built as a Directed Acyclic Graph(DAG). As workflow is more essential for understanding how the "Nerves" interact with "Memory":
 
 ```mermaid
-
-    | Graph                                  |  TD                                    |
-    |----------------------------------------|----------------------------------------|
-    | A[main.py: Input JD]                   | B[graph.py: Workflow Logic]            |
-    | B[graph.py: Workflow Logic]            | C[nodes.py: RAG Retrieval & Tailoring] |
-    | C[nodes.py: RAG Retrieval & Tailoring] | D[state.py: Memory Persistence]        |
-    | E[edges.py: Conditional Routing]       | F[main.py: Final LaTeX Output]         |
+graph TD
+    A["main.py<br/>Input JD"] --> B["graph.py<br/>Workflow Logic"]
+    B --> C["nodes.py<br/>RAG Retrieval<br/>& Tailoring"]
+    C --> D["state.py<br/>Memory Persistence"]
+    D --> E["edges.py<br/>Conditional Routing"]
+    E --> F["main.py<br/>Final LaTeX Output"]
 ```    
 
 
@@ -51,56 +50,56 @@
 ## Future Enhancement
 ```mermaid
 graph TD
-    A["📋 Job Description<br/>Input"] --> B["🔍 Parse & Extract<br/>Keywords"]
-    B --> C["💾 Store in<br/>Database"]
+    A["Job Description<br/>Input"] --> B["Parse & Extract<br/>Keywords"]
+    B --> C["Store in<br/>Database"]
     
-    C --> D["📄 Load User<br/>CV"]
-    D --> E["🧠 Semantic<br/>Matching"]
-    E --> F["📊 Calculate<br/>ATS Score"]
+    C --> D["Load User<br/>CV"]
+    D --> E["Semantic<br/>Matching"]
+    E --> F["Calculate<br/>ATS Score"]
     
     F --> G{ATS Score<br/>≥ 85%?}
     
-    G -->|YES| H["✏️ Optimize<br/>Bullet Points"]
-    H --> I["🎯 Align with<br/>JD Requirements"]
-    I --> J["📑 Generate<br/>LaTeX CV"]
-    J --> K["✅ Output<br/>Production PDF"]
+    G -->|YES| H["Optimize<br/>Bullet Points"]
+    H --> I["Align with<br/>JD Requirements"]
+    I --> J["Generate<br/>LaTeX CV"]
+    J --> K["Output<br/>Production PDF"]
     
-    G -->|NO| L["📋 Gap Analysis<br/>Report"]
-    L --> M["🔎 Identify<br/>Missing Skills"]
-    M --> N["💡 Generate<br/>Suggestions"]
+    G -->|NO| L["Gap Analysis<br/>Report"]
+    L --> M["Identify<br/>Missing Skills"]
+    M --> N["Generate<br/>Suggestions"]
     
-    N --> O["🎥 YouTube<br/>Video Links"]
-    N --> P["📚 Technical<br/>Documentation"]
-    N --> Q["👔 LinkedIn/Job<br/>Site Profiles"]
+    N --> O["YouTube<br/>Video Links"]
+    N --> P["Technical<br/>Documentation"]
+    N --> Q["LinkedIn/Job<br/>Site Profiles"]
     
-    Q --> R["💾 Save Job +<br/>Auto CV Setup"]
-    R --> S["🚀 Ready for<br/>One-Click Apply"]
+    Q --> R["Save Job +<br/>Auto CV Setup"]
+    R --> S["Ready for<br/>One-Click Apply"]
     
-    style A fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
-    style B fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
-    style C fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    style A stroke:#1976d2,stroke-width:2px
+    style B stroke:#1976d2,stroke-width:2px
+    style C stroke:#1976d2,stroke-width:2px
     
-    style D fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    style E fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    style F fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style D stroke:#7b1fa2,stroke-width:2px
+    style E stroke:#7b1fa2,stroke-width:2px
+    style F stroke:#7b1fa2,stroke-width:2px
     
-    style G fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style G stroke:#f57c00,stroke-width:2px
     
-    style H fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
-    style I fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
-    style J fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
-    style K fill:#c8e6c9,stroke:#2e7d32,stroke-width:3px
+    style H stroke:#388e3c,stroke-width:2px
+    style I stroke:#388e3c,stroke-width:2px
+    style J stroke:#388e3c,stroke-width:2px
+    style K stroke:#2e7d32,stroke-width:3px
     
-    style L fill:#fce4ec,stroke:#c2185b,stroke-width:2px
-    style M fill:#fce4ec,stroke:#c2185b,stroke-width:2px
-    style N fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    style L stroke:#c2185b,stroke-width:2px
+    style M stroke:#c2185b,stroke-width:2px
+    style N stroke:#c2185b,stroke-width:2px
     
-    style O fill:#e0f2f1,stroke:#00796b,stroke-width:2px
-    style P fill:#e0f2f1,stroke:#00796b,stroke-width:2px
-    style Q fill:#e0f2f1,stroke:#00796b,stroke-width:2px
+    style O stroke:#00796b,stroke-width:2px
+    style P stroke:#00796b,stroke-width:2px
+    style Q stroke:#00796b,stroke-width:2px
     
-    style R fill:#ffe0b2,stroke:#e65100,stroke-width:2px
-    style S fill:#ffccbc,stroke:#d84315,stroke-width:2px
+    style R stroke:#e65100,stroke-width:2px
+    style S stroke:#d84315,stroke-width:2px
 ```
 
 ## For contributors:(Developer setup)

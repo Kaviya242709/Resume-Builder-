@@ -11,12 +11,19 @@
 - Here the system is built as a Directed Acyclic Graph(DAG). As workflow is more essential for understanding how the "Nerves" interact with "Memory":
 
 ```mermaid
-graph TD
+graph LR
     A["main.py<br/>Input JD"] --> B["graph.py<br/>Workflow Logic"]
-    B --> C["nodes.py<br/>RAG Retrieval<br/>& Tailoring"]
-    C --> D["state.py<br/>Memory Persistence"]
-    D --> E["edges.py<br/>Conditional Routing"]
-    E --> F["main.py<br/>Final LaTeX Output"]
+    B --> C["nodes.py<br/>RAG & Tailoring"]
+    C --> D["state.py<br/>Memory"]
+    D --> E["edges.py<br/>Routing"]
+    E --> F["main.py<br/>LaTeX Output"]
+    
+    style A stroke:#1976d2,stroke-width:2px
+    style B stroke:#7b1fa2,stroke-width:2px
+    style C stroke:#388e3c,stroke-width:2px
+    style D stroke:#c2185b,stroke-width:2px
+    style E stroke:#f57c00,stroke-width:2px
+    style F stroke:#00796b,stroke-width:3px
 ```    
 
 
@@ -92,10 +99,7 @@ graph LR
     
     style O stroke:#00796b,stroke-width:2px
     style P stroke:#00796b,stroke-width:2px
-    style Q stroke:#00796b,stroke-width:2px
-    
-    style R stroke:#e65100,stroke-width:2px
-    style S stroke:#d84315,stroke-width:3px
+
 ```
 
 ## For contributors:(Developer setup)

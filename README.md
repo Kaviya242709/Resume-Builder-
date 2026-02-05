@@ -57,31 +57,28 @@ graph LR
 ## Future Enhancement
 ```mermaid
 graph LR
-    A["📋 Job Description"] --> B["Parse Keywords"]
-    B --> C["Store DB"]
-    C --> D["Load CV"]
-    D --> E["Semantic Match"]
-    E --> F["ATS Score"]
+    A["API Input<br/>Job URL"] --> B["Auto Extract<br/>JD"]
+    B --> C["Store in<br/>Database"]
+    C --> D["Load User<br/>CV"]
+    D --> E["Semantic<br/>Match"]
+    E --> F["Calculate<br/>ATS Score"]
     
     F --> G{Score ≥ 85%?}
     
-    G -->|YES| H["Optimize"]
-    H --> I["Align JD"]
-    I --> J["LaTeX Gen"]
-    J --> K["PDF Output"]
+    G -->|YES| H["Optimize<br/>Content"]
+    H --> I["Align with<br/>JD"]
+    I --> J["Apply Fixed<br/>Template"]
+    J --> K["Auto Generate<br/>PDF"]
     
-    G -->|❌ NO| L["Gap Analysis"]
-    L --> M["Skills Missing"]
-    M --> N["Suggestions"]
+    G -->|❌ NO| L["Gap Analysis<br/>Report"]
+    L --> M["Missing<br/>Skills"]
+    M --> N["Learning<br/>Resources"]
     
-    N --> O["YouTube"]
-    N --> P["Docs"]
-    N --> Q["LinkedIn"]
+    N --> O["YouTube<br/>Playlists"]
+    N --> P["Technical<br/>Docs"]
+    N --> Q["LinkedIn<br/>Profiles"]
     
-    Q --> R["Save Job"]
-    R --> S["Apply"]
-    
-    style A stroke:#1976d2,stroke-width:2px
+    style A stroke:#1976d2,stroke-width:3px
     style B stroke:#1976d2,stroke-width:2px
     style C stroke:#1976d2,stroke-width:2px
     
@@ -93,7 +90,7 @@ graph LR
     
     style H stroke:#388e3c,stroke-width:2px
     style I stroke:#388e3c,stroke-width:2px
-    style J stroke:#388e3c,stroke-width:2px
+    style J stroke:#2e7d32,stroke-width:3px
     style K stroke:#2e7d32,stroke-width:3px
     
     style L stroke:#c2185b,stroke-width:2px
@@ -103,9 +100,6 @@ graph LR
     style O stroke:#00796b,stroke-width:2px
     style P stroke:#00796b,stroke-width:2px
     style Q stroke:#00796b,stroke-width:2px
-    
-    style R stroke:#e65100,stroke-width:2px
-    style S stroke:#d84315,stroke-width:3px
 ```
 
 ## For contributors:(Developer setup)

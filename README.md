@@ -70,7 +70,7 @@ graph LR
     I --> J["LaTeX Gen"]
     J --> K["PDF Output"]
     
-    G -->|❌ NO| L["Gap Analysis"]
+    G -->|NO| L["Gap Analysis"]
     L --> M["Skills Missing"]
     M --> N[" Suggestions"]
     

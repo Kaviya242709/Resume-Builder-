@@ -65,8 +65,11 @@ class nerves:
         [JD] {job_desc}
 
         TASK:
-        Pick 3-5 skill categories from SKILLS and return one LaTeX macro invocation per line.
-        Each line must match this literal format (no extra text):
+        1. Pick 3-5 skill categories from SKILLS and return one LaTeX macro invocation per line.
+        2. DO NOT return project names, project titles, product names, role/job titles, company names, or dates.
+        3. Each line must match this literal format (no extra text)
+        4. Do NOT invent skills that are not supported by the [SKILLS_SOURCE]
+        5. If the source contains a "Projects" section, IGNORE those headings and their project names.
 
         \\resumeSectionType{{Category}}{{:}}{{Skill1, Skill2, Skill3}}
 

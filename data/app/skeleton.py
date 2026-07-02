@@ -13,17 +13,15 @@ class Skeleton:
         )
 
     def recall(self):
-        """here it fetches full CV data from ChromaDB as a single string"""
         result = self.collection.get(ids=["my_resume"])
 
+        print(result)
+
         if not result or not result["documents"]:
-            print("Hey sorry to tell, there is no resume data found in brain(memory)!")
+            print("No resume data found!")
             return ""
 
-        # Return the FULL content as a single string
-        # The AI will parse [SUMMARY], [SKILLS], [EXPERIENCE] sections itself
-        full_data = result["documents"][0]
-        return full_data
+        return result["documents"][0]
 
     def stitch(self, template, summary, skills, experience):
         """Final assembly of LaTeX strings"""
